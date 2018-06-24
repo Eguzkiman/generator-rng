@@ -1,0 +1,17 @@
+Features v1:
+	Project setup:
+		☐	Install dependencies (react-navigation, ...)
+		☐	Install & setup babel babel-plugin-root-import for at sign imports
+			^^^ https://github.com/entwicklerstube/babel-plugin-root-import
+		☐	Add rn-cli.config.js with support for jsx files
+			^^^ http://www.fallingcanbedeadly.com/posts/enabling-react-native-jsx-extension
+		☐	Delete App.js & create App.jsx
+		☐	Create Router.jsx with commented functionality
+		☐	Create app structure folders (app, app/components, app/routes, etc)
+		Services & utilities in the future
+		☐	Add .editorconfig (with tabs)
+
+	Subgenerators:
+		☐	Create & delete components
+		☐	Create & delete routes
+		Services & utilities in the future
