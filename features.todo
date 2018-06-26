@@ -2,12 +2,14 @@ Features v1:
 	Project setup:
 		✔	Add .editorconfig (with tabs) @done (18-06-24 14:33)
 		✔	Add rn-cli.config.js with support for jsx files @done (18-06-24 14:32)
-		☐	Install dependencies (react-navigation, ...)
-		☐	Install & setup babel babel-plugin-root-import for at sign imports
+		✔	Install dependencies (react-navigation, ...) @done (18-06-26 00:31)
+		✘	Install & setup babel babel-plugin-root-import for at sign imports @cancelled (18-06-26 00:31) Not worth it yet
 			^^^ https://github.com/entwicklerstube/babel-plugin-root-import
-		☐	Delete App.js & create App.jsx
-		☐	Create Router.jsx with commented functionality
-		☐	Create app structure folders (app, app/components, app/routes, etc)
+		✔	Delete App.js & create App.jsx @done (18-06-26 00:32)
+		✔	Create Router.jsx with commented functionality @done (18-06-26 00:32)
+		✔	Create route styles file @done (18-06-26 00:32)
+		☐	Create Page component
+		✔	Create app structure folders (app, app/components, app/routes, etc) @done (18-06-26 00:32)
 			Services & utilities in the future
 
 	Subgenerators:
