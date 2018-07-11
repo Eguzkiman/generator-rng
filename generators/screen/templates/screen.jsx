@@ -6,14 +6,14 @@ import {
 	StyleSheet
 } from 'react-native';
 
-export default class HomeScreen extends Component {
+export default class <%= camelizedScreenName %> extends Component {
 	static navigationOptions = {
-		title: '<%= name %>'
+		title: '<%= camelizedScreenName %>'
 	}
 	render () {
 		return (
 			<View style={styles.container}>
-				<Text>U R RDY 2 H4X</Text>
+				<Text><%= camelizedScreenName %></Text>
 			</View>
 		);
 	}

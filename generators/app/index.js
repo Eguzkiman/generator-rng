@@ -7,7 +7,7 @@ module.exports = class extends Generator {
 	greet () {
 		// Have Yeoman greet the user.
 		this.log(
-			yosay(`H4X0R1NG UR 4PP!`)
+			yosay(`H4X0R1NG UR 4PP!`);
 		);
 	}
 
