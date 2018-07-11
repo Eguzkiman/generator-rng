@@ -7,8 +7,13 @@ module.exports = class extends Generator {
 	greet () {
 		// Have Yeoman greet the user.
 		this.log(
-			yosay(`Welcome to the superb ${chalk.red('generator-rng')} generator!`)
+			yosay(`H4X0R1NG UR 4PP!`)
 		);
+	}
+
+	getProjectName () {
+		let { name } = this.fs.readJSON('package.json');
+		this.props = { name };
 	}
 
 	_copyFile (path) {
@@ -20,11 +25,6 @@ module.exports = class extends Generator {
 			this.destinationPath(path),
 			{ name }
 		);
-	}
-
-	getProjectName () {
-		let { name } = this.fs.readJSON('package.json');
-		this.props = { name };
 	}
 
 	deleteFiles () {
