@@ -29,6 +29,11 @@ module.exports = class extends Generator {
 		});
 	}
 
+	getProjectName() {
+		let { name } = this.fs.readJSON('package.json');
+		this.props = { appName: name };
+	}
+
 	generate() {
 		if (this.options.delete) this._deleteComponent();
 		else this._writeComponent();
@@ -42,6 +47,7 @@ module.exports = class extends Generator {
 	_writeComponent() {
 		let componentName = this.options.componentName;
 		let shouldUsePascalCase = !this.options.functional;
+		let appName = this.props.appName;
 		let camelizedComponentName = camelCase(componentName, {
 			pascalCase: shouldUsePascalCase
 		});
@@ -51,10 +57,12 @@ module.exports = class extends Generator {
 		else if (this.options.pure) template = 'pureComponent.jsx';
 		else template = 'component.jsx';
 
+		let templateParams = { camelizedComponentName, componentName, appName };
+
 		this.fs.copyTpl(
 			this.templatePath(template),
 			this.destinationPath(`app/components/${componentName}/${componentName}.jsx`),
-			{ camelizedComponentName, componentName }
+			templateParams
 		);
 
 		this.fs.copyTpl(
@@ -62,7 +70,7 @@ module.exports = class extends Generator {
 			this.destinationPath(
 				`app/components/${componentName}/${componentName}-style.js`
 			),
-			{ camelizedComponentName, componentName }
+			templateParams
 		);
 
 		this.fs.copyTpl(
@@ -70,13 +78,13 @@ module.exports = class extends Generator {
 			this.destinationPath(
 				`app/components/${componentName}/${componentName}-test.js`
 			),
-			{ camelizedComponentName, componentName }
+			templateParams
 		);
 
 		this.fs.copyTpl(
 			this.templatePath('component-index.js'),
 			this.destinationPath(`app/components/${componentName}/index.js`),
-			{ camelizedComponentName, componentName }
+			templateParams
 		);
 	}
 };

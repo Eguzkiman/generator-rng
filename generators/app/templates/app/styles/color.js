@@ -16,7 +16,8 @@ const colors = {
 	blue: '#2D9CDB',
 	lightBlue: '#56CCF2',
 	darkPurple: '#9B51E0',
-	purple: '#BB6BD9'
-}
+	purple: '#BB6BD9',
+	transparent: 'rgba(0,0,0,0)'
+};
 
 export default colors

@@ -6,24 +6,21 @@ import {
 	StyleSheet
 } from 'react-native';
 
+import styles from './home-screen-style.js';
+
 export default class HomeScreen extends Component {
+
 	static navigationOptions = {
-		title: '<%= name %>'
+		title: '<%= appName %>'
 	}
+
 	render () {
 		return (
-			<View style={styles.container}>
-				<Text>U R RDY 2 H4X</Text>
+			<View style={styles.mainContainer}>
+				<View style={styles.container}>
+					<Text style={styles.mainText}>U R RDY 2 H4X</Text>
+				</View>
 			</View>
 		);
 	}
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});
