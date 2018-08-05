@@ -4,7 +4,7 @@ Tasks de generator:
 	✔	Hacer componentes componentes @done (18-08-02 13:30)
 	✔	Hacer que los componentes se generen por carpetas con style, test e index @done (18-08-04 23:46)
 	☐	Hacer que las screens se generen por carpetas con style, test e index
-	☐	Hacer que la HomeScreen se genere con carpeta con style, test e index
+	✔	Hacer que la HomeScreen se genere con carpeta con style, test e index @done (18-08-05 01:20)
 	☐	Agregar estilo default a la homescreen
 	☐	Rework de estilos
 		✔	Agregar color.js @done (18-08-05 00:22)

@@ -12,7 +12,11 @@ const ApplicationStyles = {
 			backgroundColor: color.veryLight
 		},
 		container: {
+			flex: 1,
 			padding: metrics.baseMargin,
+			backgroundColor: color.veryLight,
+			alignItems: 'center',
+			justifyContent: 'center',
 		},
 		mainText: {
 			...font.style.h1,
