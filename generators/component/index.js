@@ -41,7 +41,7 @@ module.exports = class extends Generator {
 
 	_deleteComponent() {
 		let componentName = this.options.componentName;
-		this.fs.delete(this.destinationPath(`app/components/${componentName}.jsx`));
+		this.fs.delete(this.destinationPath(`app/components/${componentName}`));
 	}
 
 	_writeComponent() {
