@@ -2,6 +2,17 @@ Tasks de generator:
 	✔	Hacer componentes funcionales @done (18-08-02 13:22)
 	✔	Hacer componentes puros @done (18-08-02 13:32)
 	✔	Hacer componentes componentes @done (18-08-02 13:30)
-	☐	Hacer containers
-	☐	Robarme la estructura de proyecto de ignite
-	☐	Buscar más ideas que robar
+	☐	Hacer que los componentes de generen por carpetas con style y test
+	☐	Rework de estilos
+		☐	Agregar color.js
+		☐	Agregar fonts.js
+		☐	Agregar metrics.js
+		☐	Agregar ApplicationStyles.js
+		☐	Hacer que style de componente importe y use un stilo de ApplicationStyles (comentado)
+	☐	Rework de navigation
+		☐	Eliminar NavigationOptions.jsx
+		☐	Hacer que los estilos de navigation estén en ApplicationStyles
+		☐	Importar estilos de navegación en Router.js y usarlos
+	☐	Al correr el generator, asegurarse que estás sobre una app de expo
+	☐	Agregar código sample a los componentes de state y props
+	☐	Agregar generator de containers con código sample comentado

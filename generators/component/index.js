@@ -1,15 +1,11 @@
 'use strict';
 const Generator = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
 const camelCase = require('camelcase');
 
 module.exports = class extends Generator {
-
-	constructor () {
+	constructor() {
 		super(...arguments);
 		this.argument('componentName', { type: String, required: true });
-		// this.argument('isDelete', { type: String, required: false, default: false });
 
 		this.option('delete', {
 			description: 'Delete the component',
@@ -33,35 +29,54 @@ module.exports = class extends Generator {
 		});
 	}
 
-	generate () {
-		if (this.options.delete)
-			this._deleteComponent();
-		else
-			this._writeComponent();
-
+	generate() {
+		if (this.options.delete) this._deleteComponent();
+		else this._writeComponent();
 	}
 
-	_deleteComponent () {
+	_deleteComponent() {
 		let componentName = this.options.componentName;
 		this.fs.delete(this.destinationPath(`app/components/${componentName}.jsx`));
 	}
 
-	_writeComponent () {
+	_writeComponent() {
 		let componentName = this.options.componentName;
 		let shouldUsePascalCase = !this.options.functional;
-		let camelizedComponentName = camelCase(componentName, { pascalCase: shouldUsePascalCase });
+		let camelizedComponentName = camelCase(componentName, {
+			pascalCase: shouldUsePascalCase
+		});
 
-		if (this.options.functional)
-			var template = 'functionalComponent.jsx';
-		else if (this.options.pure)
-			var template = 'pureComponent.jsx';
-		else
-			var template = 'component.jsx';
+		let template;
+		if (this.options.functional) template = 'functionalComponent.jsx';
+		else if (this.options.pure) template = 'pureComponent.jsx';
+		else template = 'component.jsx';
 
 		this.fs.copyTpl(
 			this.templatePath(template),
-			this.destinationPath(`app/components/${componentName}.jsx`),
-			{ camelizedComponentName }
+			this.destinationPath(`app/components/${componentName}/${componentName}.jsx`),
+			{ camelizedComponentName, componentName }
+		);
+
+		this.fs.copyTpl(
+			this.templatePath('component-style.js'),
+			this.destinationPath(
+				`app/components/${componentName}/${componentName}-style.js`
+			),
+			{ camelizedComponentName, componentName }
+		);
+
+		this.fs.copyTpl(
+			this.templatePath('component-test.js'),
+			this.destinationPath(
+				`app/components/${componentName}/${componentName}-test.js`
+			),
+			{ camelizedComponentName, componentName }
+		);
+
+		this.fs.copyTpl(
+			this.templatePath('component-index.js'),
+			this.destinationPath(`app/components/${componentName}/index.js`),
+			{ camelizedComponentName, componentName }
 		);
 	}
-}
+};
