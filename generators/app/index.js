@@ -26,6 +26,8 @@ module.exports = class extends Generator {
 		// Main files
 		this._copyFile('App.jsx');
 		this._copyFile('app/Router.jsx');
+		// Services
+		this._copyFile('app/services/api-service.js');
 		// HomeScreen
 		this._copyFile('app/screens/home-screen/home-screen.jsx');
 		this._copyFile('app/screens/home-screen/home-screen-style.js');
