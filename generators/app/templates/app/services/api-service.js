@@ -1,5 +1,5 @@
 export default {
-	// Replace with your own
+
 	host: 'https://www.googleapis.com',
 
 	getBooks () {
