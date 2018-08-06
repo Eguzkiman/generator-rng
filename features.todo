@@ -12,11 +12,11 @@ Tasks de generator:
 		✔	Agregar metrics.js @done (18-08-05 00:22)
 		✔	Agregar ApplicationStyles.js @done (18-08-05 00:22)
 		☐	Hacer que style de componente importe y use un stilo de ApplicationStyles (comentado)
-	☐	Añadir código comentado de constructor, props y state en los componentes
+	✔	Añadir código comentado de constructor, props y state en los componentes @done (18-08-06 10:10)
 	☐	Rework de navigation
 		☐	Eliminar NavigationOptions.jsx
 		☐	Hacer que los estilos de navigation estén en ApplicationStyles
 		☐	Importar estilos de navegación en Router.js y usarlos
 	☐	Al correr el generator, asegurarse que estás sobre una app de expo
-	☐	Agregar código sample a los componentes de state y props
 	☐	Agregar generator de containers con código sample comentado
+	☐	Agregar api-service

@@ -22,6 +22,11 @@ const ApplicationStyles = {
 			...font.style.regular,
 			color: color.medium
 		}
+	},
+	stackNavigatorOptions: {
+		headerStyle: {
+			backgroundColor: '#ffffff'
+		}
 	}
 }
 
