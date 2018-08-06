@@ -1,10 +1,11 @@
-// This is a sample home screen. Feel free to modify it or delete it.
 import React, { Component } from 'react';
 import {
 	View,
 	Text,
 	StyleSheet
 } from 'react-native';
+
+import styles from './<%= screenName %>-style';
 
 export default class <%= camelizedScreenName %> extends Component {
 	static navigationOptions = {
@@ -13,17 +14,8 @@ export default class <%= camelizedScreenName %> extends Component {
 	render () {
 		return (
 			<View style={styles.container}>
-				<Text><%= camelizedScreenName %></Text>
+				<Text style={styles.bodyText}><%= camelizedScreenName %></Text>
 			</View>
 		);
 	}
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});

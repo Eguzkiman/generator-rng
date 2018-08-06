@@ -7,10 +7,6 @@ import metrics from './metrics'
 
 const ApplicationStyles = {
 	screen: {
-		mainContainer: {
-			flex: 1,
-			backgroundColor: color.veryLight
-		},
 		container: {
 			flex: 1,
 			padding: metrics.baseMargin,
@@ -18,9 +14,13 @@ const ApplicationStyles = {
 			alignItems: 'center',
 			justifyContent: 'center',
 		},
-		mainText: {
+		titleText: {
 			...font.style.h1,
 			color: color.dark
+		},
+		bodyText: {
+			...font.style.regular,
+			color: color.medium
 		}
 	}
 }

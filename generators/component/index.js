@@ -64,7 +64,6 @@ module.exports = class extends Generator {
 			this.destinationPath(`app/components/${componentName}/${componentName}.jsx`),
 			templateParams
 		);
-
 		this.fs.copyTpl(
 			this.templatePath('component-style.js'),
 			this.destinationPath(
@@ -72,7 +71,6 @@ module.exports = class extends Generator {
 			),
 			templateParams
 		);
-
 		this.fs.copyTpl(
 			this.templatePath('component-test.js'),
 			this.destinationPath(
@@ -80,7 +78,6 @@ module.exports = class extends Generator {
 			),
 			templateParams
 		);
-
 		this.fs.copyTpl(
 			this.templatePath('component-index.js'),
 			this.destinationPath(`app/components/${componentName}/index.js`),

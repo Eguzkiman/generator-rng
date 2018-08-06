@@ -1,36 +1,61 @@
 'use strict';
 const Generator = require('yeoman-generator');
-const chalk = require('chalk');
-const yosay = require('yosay');
 const camelCase = require('camelcase');
 
 module.exports = class extends Generator {
-	constructor () {
+	constructor() {
 		super(...arguments);
 		this.argument('screenName', { type: String, required: true });
-		this.argument('isDelete', { type: String, required: false, default: false });
+
+		this.option('delete', {
+			description: 'Delete the screen',
+			alias: 'd',
+			type: Boolean,
+			default: false
+		});
 	}
 
-	generate () {
-		if (this.options.isDelete === 'd')
-			this._deleteFile();
-		else
-			this._writeFile();
+	getProjectName() {
+		let { name } = this.fs.readJSON('package.json');
+		this.props = { appName: name };
 	}
 
-	_deleteFile () {
+	generate() {
+		if (this.options.delete) this._deleteScreen();
+		else this._writeScreen();
+	}
+
+	_deleteScreen() {
 		let screenName = this.options.screenName;
-		this.fs.delete(this.destinationPath(`app/screens/${screenName}.jsx`));
+		this.fs.delete(this.destinationPath(`app/screens/${screenName}`));
 	}
 
-	_writeFile () {
+	_writeScreen() {
 		let screenName = this.options.screenName;
 		let camelizedScreenName = camelCase(screenName, { pascalCase: true });
+		let appName = this.props.appName;
+
+		let templateParams = { screenName, camelizedScreenName, appName };
 
 		this.fs.copyTpl(
 			this.templatePath('screen.jsx'),
-			this.destinationPath(`app/screens/${screenName}.jsx`),
-			{ camelizedScreenName }
+			this.destinationPath(`app/screens/${screenName}/${screenName}.jsx`),
+			templateParams
+		);
+		this.fs.copyTpl(
+			this.templatePath('screen-style.js'),
+			this.destinationPath(`app/screens/${screenName}/${screenName}-style.js`),
+			templateParams
+		);
+		this.fs.copyTpl(
+			this.templatePath('screen-test.js'),
+			this.destinationPath(`app/screens/${screenName}/${screenName}-test.js`),
+			templateParams
+		);
+		this.fs.copyTpl(
+			this.templatePath('screen-index.js'),
+			this.destinationPath(`app/screens/${screenName}/index.js`),
+			templateParams
 		);
 	}
-}
+};
