@@ -5,6 +5,8 @@ import {
 	View
 } from 'react-native';
 
+import style from './<%= componentName %>-style';
+
 export default class <%= camelizedComponentName %> extends PureComponent {
 	render () {
 		return (

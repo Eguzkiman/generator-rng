@@ -3,15 +3,16 @@ Tasks de generator:
 	✔	Hacer componentes puros @done (18-08-02 13:32)
 	✔	Hacer componentes componentes @done (18-08-02 13:30)
 	✔	Hacer que los componentes se generen por carpetas con style, test e index @done (18-08-04 23:46)
-	☐	Hacer que las screens se generen por carpetas con style, test e index
+	✔	Hacer que las screens se generen por carpetas con style, test e index @done (18-08-06 09:41)
 	✔	Hacer que la HomeScreen se genere con carpeta con style, test e index @done (18-08-05 01:20)
-	☐	Agregar estilo default a la homescreen
+	✔	Agregar estilo default a la homescreen @done (18-08-06 09:41)
 	☐	Rework de estilos
 		✔	Agregar color.js @done (18-08-05 00:22)
 		✔	Agregar fonts.js @done (18-08-05 00:22)
 		✔	Agregar metrics.js @done (18-08-05 00:22)
 		✔	Agregar ApplicationStyles.js @done (18-08-05 00:22)
 		☐	Hacer que style de componente importe y use un stilo de ApplicationStyles (comentado)
+	☐	Añadir código comentado de constructor, props y state en los componentes
 	☐	Rework de navigation
 		☐	Eliminar NavigationOptions.jsx
 		☐	Hacer que los estilos de navigation estén en ApplicationStyles
