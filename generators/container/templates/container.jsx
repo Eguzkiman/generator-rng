@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import ApiService from '<%= appName %>/app/services/api-service';
 
-const <%= camelizedContainerName %> = (data) => WrappedComponent => {
+const <%= camelizedContainerName %> = (/*config*/) => WrappedComponent => {
 	class <%= pascalizedContainerName %> extends Component {
 
 		constructor (props) {
