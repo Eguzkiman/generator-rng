@@ -19,4 +19,6 @@ Tasks de generator:
 		☐	Importar estilos de navegación en Router.js y usarlos
 	☐	Al correr el generator, asegurarse que estás sobre una app de expo
 	☐	Agregar generator de containers con código sample comentado
-	☐	Agregar api-service
+	✔	Agregar api-service @done (18-08-07 10:36)
+	☐	Agregar scripts de ambiente a package.json
+	☐	Agregar configuración por ambiente en config/environment.js

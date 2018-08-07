@@ -1,10 +1,10 @@
 export default {
 
-	host: 'https://www.googleapis.com',
+	host: 'http://localhost:3000',
 
-	getBooks () {
+	getUsers () {
 		return this.makeRequest({
-			url: `${this.host}/books/v1/volumes?q=isbn:0747532699`
+			url: `${this.host}/users`
 		});
 	},
 
@@ -12,7 +12,6 @@ export default {
 		let options = {
 			method,
 			headers,
-			// body: JSON.stringify(data)
 		};
 
 		if (method === 'POST' || method == 'PUT')

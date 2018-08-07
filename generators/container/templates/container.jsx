@@ -34,3 +34,5 @@ const <%= camelizedContainerName %> = (data) => WrappedComponent => {
 
 	return <%= pascalizedContainerName %>;
 }
+
+export default <%= camelizedContainerName %>;
