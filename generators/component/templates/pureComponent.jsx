@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 import {
 	Text,
@@ -15,4 +16,12 @@ export default class <%= camelizedComponentName %> extends PureComponent {
 			</View>
 		);
 	}
+}
+
+<%= camelizedComponentName %>.propTypes = {
+	// data: PropTypes.array
+}
+
+<%= camelizedComponentName %>.defaultProps = {
+	// data: []
 }

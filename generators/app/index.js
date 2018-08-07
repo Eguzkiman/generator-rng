@@ -45,6 +45,6 @@ module.exports = class extends Generator {
 	}
 
 	install() {
-		this.yarnInstall(['react-navigation']);
+		this.yarnInstall(['react-navigation', 'prop-types']);
 	}
 };

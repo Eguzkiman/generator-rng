@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import {
 	Text,
@@ -11,7 +12,7 @@ export default class <%= camelizedComponentName %> extends Component {
 
 	// constructor (props) {
 	// 	super(props);
-	// 	this.state = { date: new Date() };
+	// 	this.state = { data: props.data };
 	// }
 
 	render () {
@@ -21,4 +22,12 @@ export default class <%= camelizedComponentName %> extends Component {
 			</View>
 		);
 	}
+}
+
+<%= camelizedComponentName %>.propTypes = {
+	// data: PropTypes.array
+}
+
+<%= camelizedComponentName %>.defaultProps = {
+	// data: []
 }

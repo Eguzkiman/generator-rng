@@ -14,17 +14,14 @@ const <%= camelizedContainerName %> = (data) => WrappedComponent => {
 
 		componentDidMount() {
 			// Use your own fetch method
-			ApiService.getBooks()
+			ApiService.getUsers()
+				.then((res) => res.json())
 				.then((data) => {
 					this.setState({ data });
 				})
 				.catch((err) => {
 					// Handle error
 				});
-		}
-
-		componentWillUnmount() {
-			this.props.clearTimeouts()
 		}
 
 		render() {

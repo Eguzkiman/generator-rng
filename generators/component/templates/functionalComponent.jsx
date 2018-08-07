@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
 	Text,
@@ -13,4 +14,12 @@ export default function <%= camelizedComponentName %> () {
 			<Text><%= camelizedComponentName %></Text>
 		</View>
 	)
+}
+
+<%= camelizedComponentName %>.propTypes = {
+	// data: PropTypes.array
+}
+
+<%= camelizedComponentName %>.defaultProps = {
+	// data: []
 }
