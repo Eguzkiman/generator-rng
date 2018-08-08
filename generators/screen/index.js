@@ -31,30 +31,31 @@ module.exports = class extends Generator {
 	}
 
 	_writeScreen() {
-		let screenName = this.options.screenName;
+		let screenPath = this.options.screenName;
+		let screenName = screenPath.split('/').pop();
 		let camelizedScreenName = camelCase(screenName, { pascalCase: true });
 		let appName = this.props.appName;
 
-		let templateParams = { screenName, camelizedScreenName, appName };
+		let templateParams = { screenPath, screenName, camelizedScreenName, appName };
 
 		this.fs.copyTpl(
 			this.templatePath('screen.jsx'),
-			this.destinationPath(`app/screens/${screenName}/${screenName}.jsx`),
+			this.destinationPath(`app/screens/${screenPath}/${screenName}.jsx`),
 			templateParams
 		);
 		this.fs.copyTpl(
 			this.templatePath('screen-style.js'),
-			this.destinationPath(`app/screens/${screenName}/${screenName}-style.js`),
+			this.destinationPath(`app/screens/${screenPath}/${screenName}-style.js`),
 			templateParams
 		);
 		this.fs.copyTpl(
 			this.templatePath('screen-test.js'),
-			this.destinationPath(`app/screens/${screenName}/${screenName}-test.js`),
+			this.destinationPath(`app/screens/${screenPath}/${screenName}-test.js`),
 			templateParams
 		);
 		this.fs.copyTpl(
 			this.templatePath('screen-index.js'),
-			this.destinationPath(`app/screens/${screenName}/index.js`),
+			this.destinationPath(`app/screens/${screenPath}/index.js`),
 			templateParams
 		);
 	}

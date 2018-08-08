@@ -6,7 +6,7 @@ import {
 	View
 } from 'react-native';
 
-import style from './<%= componentName %>-style';
+import style from './<%= componentPath %>-style';
 
 export default function <%= camelizedComponentName %> () {
 	return (

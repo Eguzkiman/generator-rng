@@ -40,12 +40,17 @@ module.exports = class extends Generator {
 	}
 
 	_deleteComponent() {
-		let componentName = this.options.componentName;
-		this.fs.delete(this.destinationPath(`app/components/${componentName}`));
+		let componentPath = this.options.componentName;
+		console.log(componentPath);
+		this.fs.delete(this.destinationPath(`app/components/${componentPath}/`), {
+			onlyDirectories: true,
+			onlyFiles: false
+		});
 	}
 
 	_writeComponent() {
-		let componentName = this.options.componentName;
+		let componentPath = this.options.componentName;
+		let componentName = componentPath.split('/').pop();
 		let shouldUsePascalCase = !this.options.functional;
 		let appName = this.props.appName;
 		let camelizedComponentName = camelCase(componentName, {
@@ -57,30 +62,35 @@ module.exports = class extends Generator {
 		else if (this.options.pure) template = 'pureComponent.jsx';
 		else template = 'component.jsx';
 
-		let templateParams = { camelizedComponentName, componentName, appName };
+		let templateParams = {
+			camelizedComponentName,
+			componentPath,
+			componentName,
+			appName
+		};
 
 		this.fs.copyTpl(
 			this.templatePath(template),
-			this.destinationPath(`app/components/${componentName}/${componentName}.jsx`),
+			this.destinationPath(`app/components/${componentPath}/${componentName}.jsx`),
 			templateParams
 		);
 		this.fs.copyTpl(
 			this.templatePath('component-style.js'),
 			this.destinationPath(
-				`app/components/${componentName}/${componentName}-style.js`
+				`app/components/${componentPath}/${componentName}-style.js`
 			),
 			templateParams
 		);
 		this.fs.copyTpl(
 			this.templatePath('component-test.js'),
 			this.destinationPath(
-				`app/components/${componentName}/${componentName}-test.js`
+				`app/components/${componentPath}/${componentName}-test.js`
 			),
 			templateParams
 		);
 		this.fs.copyTpl(
 			this.templatePath('component-index.js'),
-			this.destinationPath(`app/components/${componentName}/index.js`),
+			this.destinationPath(`app/components/${componentPath}/index.js`),
 			templateParams
 		);
 	}

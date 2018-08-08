@@ -5,7 +5,7 @@ import {
 	StyleSheet
 } from 'react-native';
 
-import styles from './<%= screenName %>-style';
+import styles from './<%= screenPath %>-style';
 
 export default class <%= camelizedScreenName %> extends Component {
 	static navigationOptions = {

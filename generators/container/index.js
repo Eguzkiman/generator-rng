@@ -31,12 +31,14 @@ module.exports = class extends Generator {
 	}
 
 	_writeContainer() {
-		let containerName = this.options.containerName;
+		let containerPath = this.options.containerName;
+		let containerName = containerPath.split('/').pop();
 		let camelizedContainerName = camelCase(containerName);
 		let pascalizedContainerName = camelCase(containerName, { pascalCase: true });
 		let appName = this.props.appName;
 
 		let templateParams = {
+			containerPath,
 			containerName,
 			camelizedContainerName,
 			pascalizedContainerName,
@@ -45,21 +47,21 @@ module.exports = class extends Generator {
 
 		this.fs.copyTpl(
 			this.templatePath('container.jsx'),
-			this.destinationPath(`app/containers/${containerName}/${containerName}.jsx`),
+			this.destinationPath(`app/containers/${containerPath}/${containerName}.jsx`),
 			templateParams
 		);
 
 		this.fs.copyTpl(
 			this.templatePath('container-test.js'),
 			this.destinationPath(
-				`app/containers/${containerName}/${containerName}-test.js`
+				`app/containers/${containerPath}/${containerName}-test.js`
 			),
 			templateParams
 		);
 
 		this.fs.copyTpl(
 			this.templatePath('container-index.js'),
-			this.destinationPath(`app/containers/${containerName}/index.js`),
+			this.destinationPath(`app/containers/${containerPath}/index.js`),
 			templateParams
 		);
 	}
