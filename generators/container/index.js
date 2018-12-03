@@ -46,8 +46,8 @@ module.exports = class extends Generator {
 		};
 
 		this.fs.copyTpl(
-			this.templatePath('container.jsx'),
-			this.destinationPath(`app/containers/${containerPath}/${containerName}.jsx`),
+			this.templatePath('container.js'),
+			this.destinationPath(`app/containers/${containerPath}/${containerName}.js`),
 			templateParams
 		);
 

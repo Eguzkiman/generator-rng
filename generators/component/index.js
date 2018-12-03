@@ -54,9 +54,9 @@ module.exports = class extends Generator {
 		});
 
 		let template;
-		if (this.options.functional) template = 'functionalComponent.jsx';
-		else if (this.options.pure) template = 'pureComponent.jsx';
-		else template = 'component.jsx';
+		if (this.options.functional) template = 'functionalComponent.js';
+		else if (this.options.pure) template = 'pureComponent.js';
+		else template = 'component.js';
 
 		let templateParams = {
 			camelizedComponentName,
@@ -67,7 +67,7 @@ module.exports = class extends Generator {
 
 		this.fs.copyTpl(
 			this.templatePath(template),
-			this.destinationPath(`app/components/${componentPath}/${componentName}.jsx`),
+			this.destinationPath(`app/components/${componentPath}/${componentName}.js`),
 			templateParams
 		);
 		this.fs.copyTpl(

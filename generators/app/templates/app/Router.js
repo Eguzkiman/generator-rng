@@ -9,7 +9,7 @@ import { createStackNavigator } from 'react-navigation';
 import HomeScreen from '<%= appName %>/app/screens/home-screen';
 
 // You might want to add some navigator options to your navigator.
-// You can edit this options in app/serivices/navigatorOptions.jsx
+// You can edit this options in app/serivices/navigatorOptions.js
 // import { stackNavigatorOptions } from '<%= appName %>/app/services/navigatorOptions';
 import { ApplicationStyles } from '<%= appName %>/app/styles';
 

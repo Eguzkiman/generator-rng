@@ -39,8 +39,8 @@ module.exports = class extends Generator {
 		let templateParams = { screenPath, screenName, camelizedScreenName, appName };
 
 		this.fs.copyTpl(
-			this.templatePath('screen.jsx'),
-			this.destinationPath(`app/screens/${screenPath}/${screenName}.jsx`),
+			this.templatePath('screen.js'),
+			this.destinationPath(`app/screens/${screenPath}/${screenName}.js`),
 			templateParams
 		);
 		this.fs.copyTpl(

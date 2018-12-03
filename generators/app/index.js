@@ -24,12 +24,12 @@ module.exports = class extends Generator {
 
 	writeFiles() {
 		// Main files
-		this._copyFile('App.jsx');
-		this._copyFile('app/Router.jsx');
+		this._copyFile('App.js');
+		this._copyFile('app/Router.js');
 		// Services
 		this._copyFile('app/services/api-service.js');
 		// HomeScreen
-		this._copyFile('app/screens/home-screen/home-screen.jsx');
+		this._copyFile('app/screens/home-screen/home-screen.js');
 		this._copyFile('app/screens/home-screen/home-screen-style.js');
 		this._copyFile('app/screens/home-screen/home-screen-test.js');
 		this._copyFile('app/screens/home-screen/index.js');
