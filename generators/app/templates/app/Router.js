@@ -1,7 +1,7 @@
 // Use this file to create all app navigators.
 
 import React, { Component } from 'react';
-import { createStackNavigator } from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 
 // For each navigator, import its screens. Each screen may be used in many navigators
 // To add more screens, run yo rng:g screen <screen-name>
@@ -22,4 +22,4 @@ const MainNavigator = createStackNavigator({
 	}
 });
 
-export default MainNavigator;
+export default createAppContainer(MainNavigator);

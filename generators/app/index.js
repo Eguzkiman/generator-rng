@@ -9,10 +9,37 @@ module.exports = class extends Generator {
 	}
 
 	getProjectName() {
-		let { name } = this.fs.readJSON('package.json');
-		this.props = { appName: name };
+		let packageJSON = this.fs.readJSON('package.json');
+		let appName = packageJSON.name;
+
+		if (!appName) {
+			let expoJSON = this.fs.readJSON('app.json');
+			appName = expoJSON.expo && expoJSON.expo.name;
+
+			let newPackageJSON = Object.assign({ name: appName }, packageJSON);
+			this.fs.write('package.json', JSON.stringify(newPackageJSON, null, '\t'));
+		}
+
+		this.props = { appName };
 	}
 
+	/* _setupName () {
+		let expoJSON = this.fs.readJSON('app.json');
+		let name = expoJSON.expo && expoJSON.expo.name;
+	
+		
+	}
+
+	_getPackageName () {
+		return this.fs.readJSON('package.json').name;
+	}
+
+	getProjectName() {
+		appName = this._getPackageName() || this._setupName();
+		
+		this.props = { appName };
+	}
+*/
 	_copyFile(path) {
 		let appName = this.props.appName;
 		this.fs.copyTpl(this.templatePath(path), this.destinationPath(path), { appName });
